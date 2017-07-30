@@ -8,7 +8,7 @@ import com.mysql.jdbc.Connection;
 public class DatabaseConnection {
 
 	private static final String DBDRIVER="com.mysql.jdbc.Driver";
-	private static final String DBURL="jdbc:mysql://127.0.0.1:3306/db_shiro";
+	private static final String DBURL="jdbc:mysql://127.0.0.1:3306/db_dao_factory";
 	private static final String DBUSER="root";
 	private static final String DBPASSWORD="root";
 	public Connection conn;

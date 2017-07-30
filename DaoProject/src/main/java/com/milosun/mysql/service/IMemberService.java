@@ -1,6 +1,7 @@
 package com.milosun.mysql.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.milosun.mysql.vo.Member;
@@ -45,18 +46,37 @@ public interface IMemberService {
 	 */
 	public Member get(String id) throws Exception;
 	
+	/**
+	 *  使用IMemberDao.findAll() 查询全部数据
+	 * @return 所有数据以List集合集合返回,如果没有数据则集合长度为0
+	 * @throws Exception
+	 */
+	public List<Member> list() throws Exception;
 	
-	public List<Member> findAll() throws Exception;
+	/**
+	 *  分页列表显示,要执行如下操作: <br>
+	 *  <li>1、调用IMemberDao.findAllSplit()方法,取得全部的数据</li>
+	 * @param currentPage 当前所在页
+	 * @param lineSize 每页显示的数据量
+	 * @return 本次的操作会返回多个结果,以Map的形式保存,包括如下内容:<br>
+	 * <li>1、key= allMembers 、value= IMemberDao.findAllSplit(),类型: List&lt;Member&gt;</li>
+	 * <li>2、key= memberCount、value= IMemberDao.getAllCount(), 类型: Long</li>
+	 * @throws Exception
+	 */
+	public Map<String,Object> list(Integer currentPage,Integer lineSize) throws Exception;
 	
-	
-	public List<Member> findAllSplit(Integer currentPage,Integer lineSize) throws Exception;
-	
-	
-	public List<Member> findAllSplit(String column,String keyWord,Integer currentPage,Integer lineSize) throws Exception;
-
-	
-	public Long getAllCount() throws Exception;
-	
-	
-	public Long getAllCount(String column,String keyWord) throws Exception;
+	/**
+	 *  分页列表显示,要执行如下操作: <br>
+	 *  <li>1、调用IMemberDao.findAllSplit()方法,取得全部的数据</li>
+	 *  <li>2、调用IMemberDao.getAllCount()方法,统计数据量</li>
+	 * @param column 模糊查询数据列
+	 * @param keyWord 模糊查询关键字
+	 * @param currentPage 当前所在页
+	 * @param lineSize 每页显示的数据量
+	 * @return 本次的操作会返回多个结果,以Map的形式保存,包括如下内容:<br>
+	 * <li>1、key= allMembers 、value= IMemberDao.findAllSplit(),类型: List&lt;Member&gt;</li>
+	 * <li>2、key= memberCount、value= IMemberDao.getAllCount(), 类型: Long</li>
+	 * @throws Exception
+	 */
+	public Map<String,Object> list(String column,String keyWord,Integer currentPage,Integer lineSize) throws Exception;
 }

@@ -1,7 +1,8 @@
 package com.milosun.mysql.vo;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+
 
 @SuppressWarnings("serial")
 public class Member implements Serializable {
