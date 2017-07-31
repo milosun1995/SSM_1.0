@@ -1,0 +1,3 @@
+二次修改，数据连接类库。
+工厂类不需要为Constructor类执行构造调用而痛苦了。
+手写的代码，对于Connection数据库的连接控制必须要通过我们的ThreadLocal类取得
