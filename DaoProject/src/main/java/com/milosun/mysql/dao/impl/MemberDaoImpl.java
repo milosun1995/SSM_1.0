@@ -95,8 +95,8 @@ public class MemberDaoImpl implements IMemberDao {
 		List<Member> all = new ArrayList<Member>();
 		String sql = "SELECT mid,name,age,phone,birthday,note FROM T_MEMBER LIMIT ?,?";
 		this.pstmt = this.conn.prepareStatement(sql);
-		this.pstmt.setInt(1, currentPage * lineSize);
-		this.pstmt.setInt(2, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(1, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(2, currentPage * lineSize);
 		ResultSet rs = this.pstmt.executeQuery();
 		if (rs.next()) { // 如果有数据返回则进行对象实例化
 			Member vo = new Member();
@@ -117,8 +117,8 @@ public class MemberDaoImpl implements IMemberDao {
 		String sql = "SELECT mid,name,age,phone,birthday,note FROM T_MEMBER WHERE " + column + " like ? LIMIT ?,?";
 		this.pstmt = this.conn.prepareStatement(sql);
 		this.pstmt.setString(1, "%" + keyWord + "%");
-		this.pstmt.setInt(2, currentPage * lineSize);
-		this.pstmt.setInt(3, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(2, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(3, currentPage * lineSize);
 		ResultSet rs = this.pstmt.executeQuery();
 		if (rs.next()) { // 如果有数据返回则进行对象实例化
 			Member vo = new Member();
