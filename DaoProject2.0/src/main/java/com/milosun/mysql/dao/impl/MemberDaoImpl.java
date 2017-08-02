@@ -1,9 +1,7 @@
 package com.milosun.mysql.dao.impl;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -22,7 +20,8 @@ public class MemberDaoImpl extends AbstractDao implements IMemberDao {
 	}
 
 	public boolean doRemoveBatch(Set<String> ids) throws Exception {
-		StringBuffer buf = new StringBuffer(); // 需要频繁修改字符串
+		return removeSupport(ids,Member.class);
+		/*StringBuffer buf = new StringBuffer(); // 需要频繁修改字符串
 		buf.append("DELETE FROM T_MEMBER WHERE mid IN(");
 		Iterator<String> iter = ids.iterator();
 		while (iter.hasNext()) {
@@ -30,7 +29,7 @@ public class MemberDaoImpl extends AbstractDao implements IMemberDao {
 		}
 		buf.delete(buf.length() - 1, buf.length()).append(")");// 将结尾多出来的" , "删掉。
 		this.pstmt = (PreparedStatement) this.conn.prepareStatement(buf.toString());
-		return this.pstmt.executeUpdate() == ids.size();
+		return this.pstmt.executeUpdate() == ids.size();*/
 	}
 
 	public Member findById(String id) throws Exception {

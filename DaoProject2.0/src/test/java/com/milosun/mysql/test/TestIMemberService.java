@@ -72,7 +72,7 @@ public class TestIMemberService {
 		public void testRemove() {
 			service=ServiceFactory.getInstance(MemberServiceImpl.class);
 			Set<String> set=new HashSet<String>();
-			set.add(mid);
+			set.add("测试ID-802");
 			try {
 				service.remove(set);
 				System.out.println("******** Remove √*********");

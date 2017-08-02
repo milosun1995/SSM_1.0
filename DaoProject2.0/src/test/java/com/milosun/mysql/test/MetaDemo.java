@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSetMetaData;
 
-import org.junit.experimental.results.ResultMatchers;
 
 
 public class MetaDemo {

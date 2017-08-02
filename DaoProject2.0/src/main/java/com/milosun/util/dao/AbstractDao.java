@@ -2,9 +2,12 @@ package com.milosun.util.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Set;
 
 import com.milosun.mysql.dbc.DatabaseConnection;
 import com.milosun.util.dao.support.CreateSupport;
+import com.milosun.util.dao.support.RemoveSupport;
 import com.milosun.util.dao.support.UpdateSupport;
 
 /**
@@ -43,5 +46,13 @@ public abstract class AbstractDao {
     	updateSupport.setPreparedStatement(pstmt);
     	return pstmt.executeUpdate()>0;
     	
+    }
+    
+    public <T> boolean removeSupport(Set<?> ids,Class<T> cls) throws SQLException {
+    	RemoveSupport removeSupport=new RemoveSupport();
+    	String idType = ids.toArray()[0].getClass().getSimpleName(); 
+    	this.pstmt = this.conn.prepareStatement(removeSupport.createSQL(ids, cls));
+    	removeSupport.setPreparedStatement(idType,pstmt);
+    	return this.pstmt.executeUpdate()==ids.size();
     }
 }
