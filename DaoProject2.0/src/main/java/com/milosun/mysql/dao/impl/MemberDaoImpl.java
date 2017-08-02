@@ -1,6 +1,5 @@
 package com.milosun.mysql.dao.impl;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -9,39 +8,17 @@ import java.util.List;
 import java.util.Set;
 
 import com.milosun.mysql.dao.IMemberDao;
-import com.milosun.mysql.dbc.DatabaseConnection;
 import com.milosun.mysql.vo.Member;
+import com.milosun.util.dao.AbstractDao;
 
-public class MemberDaoImpl implements IMemberDao {
-	private Connection conn;
-	private PreparedStatement pstmt;// 所有的数据库操作都通过此接口完成
-
-	public MemberDaoImpl() {
-		this.conn = DatabaseConnection.getConnection();
-	}
+public class MemberDaoImpl extends AbstractDao implements IMemberDao {
 
 	public boolean doCreate(Member vo) throws Exception {
-		String sql = "INSERT INTO T_MEMBER(mid,name,age,phone,birthday,note) VALUES (?,?,?,?,?,?)";
-		this.pstmt = this.conn.prepareStatement(sql);
-		this.pstmt.setString(1, vo.getMid());
-		this.pstmt.setString(2, vo.getName());
-		this.pstmt.setInt(3, vo.getAge());
-		this.pstmt.setString(4, vo.getPhone());
-		this.pstmt.setDate(5, new java.sql.Date(vo.getBirthday().getTime()));
-		this.pstmt.setString(6, vo.getNote());
-		return this.pstmt.executeUpdate() > 0;
+		return super.createSupport(vo);
 	}
 
 	public boolean doUpdate(Member vo) throws Exception {
-		String sql = "UPDATE T_MEMBER SET name=?,age=?,phone=?,birthday=?,note=? WHERE mid=?";
-		this.pstmt = (PreparedStatement) this.conn.prepareStatement(sql);
-		this.pstmt.setString(1, vo.getName());
-		this.pstmt.setInt(2, vo.getAge());
-		this.pstmt.setString(3, vo.getPhone());
-		this.pstmt.setDate(4, new java.sql.Date(vo.getBirthday().getTime()));
-		this.pstmt.setString(5, vo.getNote());
-		this.pstmt.setString(6, vo.getMid());
-		return this.pstmt.executeUpdate() > 0;
+		return super.updateSupport(vo);
 	}
 
 	public boolean doRemoveBatch(Set<String> ids) throws Exception {
@@ -96,8 +73,8 @@ public class MemberDaoImpl implements IMemberDao {
 		List<Member> all = new ArrayList<Member>();
 		String sql = "SELECT mid,name,age,phone,birthday,note FROM T_MEMBER LIMIT ?,?";
 		this.pstmt = this.conn.prepareStatement(sql);
-		this.pstmt.setInt(1, currentPage * lineSize);
-		this.pstmt.setInt(2, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(1, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(2, currentPage * lineSize);
 		ResultSet rs = this.pstmt.executeQuery();
 		if (rs.next()) { // 如果有数据返回则进行对象实例化
 			Member vo = new Member();
@@ -118,8 +95,8 @@ public class MemberDaoImpl implements IMemberDao {
 		String sql = "SELECT mid,name,age,phone,birthday,note FROM T_MEMBER WHERE " + column + " like ? LIMIT ?,?";
 		this.pstmt = this.conn.prepareStatement(sql);
 		this.pstmt.setString(1, "%" + keyWord + "%");
-		this.pstmt.setInt(2, currentPage * lineSize);
-		this.pstmt.setInt(3, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(2, (currentPage - 1) * lineSize);
+		this.pstmt.setInt(3, currentPage * lineSize);
 		ResultSet rs = this.pstmt.executeQuery();
 		if (rs.next()) { // 如果有数据返回则进行对象实例化
 			Member vo = new Member();

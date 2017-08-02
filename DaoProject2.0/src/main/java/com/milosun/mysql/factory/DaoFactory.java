@@ -1,7 +1,5 @@
 package com.milosun.mysql.factory;
 
-import java.lang.reflect.Constructor;
-import java.sql.Connection;
 
 /**
  * 取得DAO接口的工厂类 

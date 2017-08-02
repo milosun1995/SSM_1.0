@@ -55,9 +55,9 @@ public class TestIMemberService {
 		public void testEdit() {
 			Member mem=new Member();
 			service=ServiceFactory.getInstance(MemberServiceImpl.class);
-			mem.setMid(mid);
+			mem.setMid("测试ID-172");
 			mem.setPhone(phone);
-			mem.setAge(20);
+			mem.setAge(40);
 			mem.setBirthday(new Date());
 			mem.setNote("Hello.I'm Milo!");
 			mem.setName("Milo");
