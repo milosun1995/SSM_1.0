@@ -63,9 +63,8 @@ public class DatabaseConnection {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		DatabaseConnection databaseConnection=new DatabaseConnection();
 		try {
-			databaseConnection.getConnection();
+			DatabaseConnection.getConnection();
 			System.out.println("连接数据库成功！");
 		} catch (Exception e) {
 			e.printStackTrace();
