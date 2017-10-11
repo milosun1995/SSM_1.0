@@ -148,19 +148,16 @@
 								<textarea class="textarea" style="width: 100%" rows="5" id="content" name="content" placeholder="来说两句吧..."></textarea>
 							</div>
 							<br>
-							<form class="form form-horizontal" role="form">
-							
 							<div class="form-group">
-								<div  class="col-sm-4 control-label">验证码：</div>
-								<div class="col-sm-6">
+								<div class="control-label">验证码：</div>
+								<div class="">
 									<input class="input-text" type="text" value="${imageCode }" name="imageCode"  id="imageCode" onkeydown= "if(event.keyCode==13)form1.submit()"/>
 								</div>
-								<div class="col-sm-1">
+								<div class="">
 									<img onclick="javascript:loadimage();" class="control-label" title="换一张试试" name="randImage" id="randImage" src="${pageContext.request.contextPath}/image.jsp" width="60" height="20" border="1" align="absmiddle">
 								</div>
-								<div  class="col-sm-1"></div>
+								<div class="col-sm-1"></div>
 							</div>
-							</form>
 							<div class="publishButton">
 									<button class="btn btn-primary" type="button" onclick="submitData()">发表评论</button>
 							</div>
