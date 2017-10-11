@@ -309,10 +309,13 @@ ul.infos {
 
 ul.infos img {
   max-width: 100%;
+  /* height: 100px; */
+  
 }
 
 ul.infos p {
     margin-bottom: 5px;
+    padding-right: 10%;
 }
 
 .keybq {
