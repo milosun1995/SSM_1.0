@@ -102,8 +102,8 @@
 												 	<span>${status.index+1 }楼</span>
 												    	<div class="comment-main">
                                    							<header class="comment-header">
-                                        						<div class="comment-meta"><a class="comment-author" href="#">${comment.userIp }:</a>
-                                           								 <time title="2014年8月31日 下午3:20" datetime="2014-08-31T03:54:20" class="f-r">[&nbsp;<fmt:formatDate value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</time>
+                                        						<div class="comment-meta"><a class="comment-author" href="#"><b style="font-size:large; ">${comment.userIp }</b>:</a><br>
+                                           								 <i><time title="2014年8月31日 下午3:20" datetime="2014-08-31T03:54:20" >[&nbsp;<fmt:formatDate value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</time></i>
                                         						</div>
                                 						    </header>
 						                                    <div class="comment-body">
@@ -119,8 +119,8 @@
 													 	<span>${status.index+1 }楼</span>
 													    	<div class="comment-main">
 	                                   							<header class="comment-header">
-	                                        						<div class="comment-meta"><a class="comment-author" href="#">${comment.userIp }:</a>
-	                                           								 <time title="2014年8月31日 下午3:20" datetime="2014-08-31T03:54:20" class="f-r">[&nbsp;<fmt:formatDate value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</time>
+	                                        						<div class="comment-meta"><a class="comment-author" href="#"><b style="font-size:large; ">${comment.userIp }</b>说道:</a><br/>
+	                                           								 <i><time title="2014年8月31日 下午3:20" datetime="2014-08-31T03:54:20" style="">[&nbsp;<fmt:formatDate value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</time></i>
 	                                        						</div>
 	                                						    </header>
 							                                    <div class="comment-body">

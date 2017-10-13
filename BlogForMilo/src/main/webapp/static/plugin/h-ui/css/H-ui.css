@@ -3975,7 +3975,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus{color: #fff;text-deco
 		.comment-meta{font-size:13px;color:#999;line-height:1.2}
 		.comment-meta a{color:#999}
 		.comment-author{font-weight:700;color:#999}
-		.comment-body{padding:15px;overflow:hidden}
+		.comment-body{padding:5px;overflow:hidden}
 		.comment-body>:last-child{margin-bottom:0}
 .commentList .comment-flip .avatar {float: right}
 	.comment-flip .comment-main{margin-left: 0; margin-right: 64px}
