@@ -14,7 +14,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="content" column="content"/>
 		<result property="keyWord" column="keyWord"/>
 		<association property="blogType" column="typeId" select="org.blog.milo.dao.BlogTypeDao.findById"></association>
-		
 	</resultMap>
 	
 	<select id="countList"  resultMap="BlogResult">
@@ -23,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="moodList"  resultMap="BlogResult">
-		SELECT DATE_FORMAT(releaseDate,'%Y年%m月%d日') AS releaseDateStr ,title AS title ,summary AS summary FROM t_blog ORDER BY DATE_FORMAT(releaseDate,'%Y年%m月%d日') DESC;
+		SELECT DATE_FORMAT(releaseDate,'%Y年%m月%d日') AS releaseDateStr ,id AS id ,title AS title ,summary AS summary FROM t_blog ORDER BY DATE_FORMAT(releaseDate,'%Y年%m月%d日') DESC;
 	</select>
 	
 	

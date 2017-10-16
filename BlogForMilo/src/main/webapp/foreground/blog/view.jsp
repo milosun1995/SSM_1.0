@@ -83,7 +83,7 @@
 					<div class="mb-20">
 						<ul class="commentList">
                             <li class="item cl">
-							<img src="${pageContext.request.contextPath}/static/images/comment_icon.png"/>
+							<img src="${pageContext.request.contextPath}/static/img/comment_icon.png"/>
 							评论信息    
 							<c:if test="${commentList.size()>10}">
 								<a href="javascript:showOtherComment()" style="float: right;padding-right: 40px;">显示所有评论</a>
@@ -140,7 +140,7 @@
 						<!--用于评论-->
 					<div class="data_list" >
 						<div class="data_list_title">
-							<img src="${pageContext.request.contextPath}/static/images/publish_comment_icon.png"/>
+							<img src="${pageContext.request.contextPath}/static/img/publish_comment_icon.png"/>
 							发表评论
 						</div>
 						<div class="publish_comment">
@@ -188,7 +188,7 @@
 				<a href=""><strong>扫我关注</strong></a>
 			</div>
 			<div class="tab-category-item">
-				<img data-original="http://a2.qpic.cn/psb?/V14Pp6h83A9Qyt/ACb1RJ6CMMDuZid1ZdmzRsOcb1zRwU2hIjPPVFbxb58!/b/dGkBAAAAAAAA&ek=1&kp=1&pt=0&bo=MgE0AQAAAAADFzQ!&vuin=1248497033&tm=1505304000&sce=60-2-2&rf=viewer_4" class="img-responsive lazyload"
+				<img data-original="${pageContext.request.contextPath}/static/img/wx.png" class="img-responsive lazyload"
 					alt="响应式图片">
 			</div>
 		</div>

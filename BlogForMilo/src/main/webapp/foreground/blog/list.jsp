@@ -130,7 +130,7 @@
 				<a href=""><strong>扫我关注</strong></a>
 			</div>
 			<div class="tab-category-item">
-				<img data-original="http://a2.qpic.cn/psb?/V14Pp6h83A9Qyt/ACb1RJ6CMMDuZid1ZdmzRsOcb1zRwU2hIjPPVFbxb58!/b/dGkBAAAAAAAA&ek=1&kp=1&pt=0&bo=MgE0AQAAAAADFzQ!&vuin=1248497033&tm=1505304000&sce=60-2-2&rf=viewer_4" class="img-responsive lazyload" alt="响应式图片">
+				<img data-original="${pageContext.request.contextPath}/static/img/wx_pic.png" class="img-responsive lazyload" alt="响应式图片">
 			</div>
 		</div>
 		
@@ -154,16 +154,16 @@
             </div>
             <div class="panel-body">
                 <ul class="recent">
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
-                    <div class="item"><img src="img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
+                    <div class="item"><img src="${pageContext.request.contextPath}static/img/40.jpg" alt=""></div>
                 </ul>
             </div>
         </div>
