@@ -79,6 +79,7 @@
             </div>
             <div class="tab-category-item">
                 <ul class="index_recd">
+                	<li class="index_recd_item"><img src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName }" alt="" width="200" height="354"></li>
                     <li class="index_recd_item"><i class="Hui-iconfont">&#xe653;</i>姓名：${blogger.nickName }</li>
                     <li class="index_recd_item"><i class="Hui-iconfont">&#xe70d;</i>职业：${blogger.profession }</li>
                     <li class="index_recd_item"><i class="Hui-iconfont">&#xe63b;</i>邮箱：<a href="mailto:${blogger.email!=null?blogger.email:'javascript:void(0)'}">${blogger.email}</a></li>
