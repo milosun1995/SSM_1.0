@@ -4,195 +4,63 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Java开源博客系统后台登录页面-Powered by java1234</title>
-<script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
-<STYLE>
-body{
-	background: #ebebeb;
-	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
-	color: #222;
-	font-size: 12px;
-}
-*{padding: 0px;margin: 0px;}
-.top_div{
-	background: #008ead;
-	width: 100%;
-	height: 400px;
-}
-.ipt{
-	border: 1px solid #d3d3d3;
-	padding: 10px 10px;
-	width: 290px;
-	border-radius: 4px;
-	padding-left: 35px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
-}
-.ipt:focus{
-	border-color: #66afe9;
-	outline: 0;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
-}
-.u_logo{
-	background: url("${pageContext.request.contextPath}/static/images/username.png") no-repeat;
-	padding: 10px 10px;
-	position: absolute;
-	top: 43px;
-	left: 40px;
-
-}
-.p_logo{
-	background: url("${pageContext.request.contextPath}/static/images/password.png") no-repeat;
-	padding: 10px 10px;
-	position: absolute;
-	top: 12px;
-	left: 40px;
-}
-a{
-	text-decoration: none;
-}
-.tou{
-	background: url("${pageContext.request.contextPath}/static/images/tou.png") no-repeat;
-	width: 97px;
-	height: 92px;
-	position: absolute;
-	top: -87px;
-	left: 140px;
-}
-.left_hand{
-	background: url("${pageContext.request.contextPath}/static/images/left_hand.png") no-repeat;
-	width: 32px;
-	height: 37px;
-	position: absolute;
-	top: -38px;
-	left: 150px;
-}
-.right_hand{
-	background: url("${pageContext.request.contextPath}/static/images/right_hand.png") no-repeat;
-	width: 32px;
-	height: 37px;
-	position: absolute;
-	top: -38px;
-	right: -64px;
-}
-.initial_left_hand{
-	background: url("${pageContext.request.contextPath}/static/images/hand.png") no-repeat;
-	width: 30px;
-	height: 20px;
-	position: absolute;
-	top: -12px;
-	left: 100px;
-}
-.initial_right_hand{
-	background: url("${pageContext.request.contextPath}/static/images/hand.png") no-repeat;
-	width: 30px;
-	height: 20px;
-	position: absolute;
-	top: -12px;
-	right: -112px;
-}
-.left_handing{
-	background: url("${pageContext.request.contextPath}/static/images/left-handing.png") no-repeat;
-	width: 30px;
-	height: 20px;
-	position: absolute;
-	top: -24px;
-	left: 139px;
-}
-.right_handinging{
-	background: url("${pageContext.request.contextPath}/static/images/right_handing.png") no-repeat;
-	width: 30px;
-	height: 20px;
-	position: absolute;
-	top: -21px;
-	left: 210px;
-}
-
-</STYLE>
-     
-<SCRIPT type="text/javascript">
-$(function(){
-	//得到焦点
-	$("#password").focus(function(){
-		$("#left_hand").animate({
-			left: "150",
-			top: " -38"
-		},{step: function(){
-			if(parseInt($("#left_hand").css("left"))>140){
-				$("#left_hand").attr("class","left_hand");
-			}
-		}}, 2000);
-		$("#right_hand").animate({
-			right: "-64",
-			top: "-38px"
-		},{step: function(){
-			if(parseInt($("#right_hand").css("right"))> -70){
-				$("#right_hand").attr("class","right_hand");
-			}
-		}}, 2000);
-	});
-	//失去焦点
-	$("#password").blur(function(){
-		$("#left_hand").attr("class","initial_left_hand");
-		$("#left_hand").attr("style","left:100px;top:-12px;");
-		$("#right_hand").attr("class","initial_right_hand");
-		$("#right_hand").attr("style","right:-112px;top:-12px");
-	});
-});
-
-function checkForm(){
-	var userName=$("#userName").val();
-	var password=$("#password").val();
-	if(userName==null||userName==""){
-		$("#error").html("用户名不能为空！");
-		return false;
-	}
-	if(password==null||password==""){
-		$("#error").html("密码不能为空！");
-		return false;
-	}
-	return true;
-}
-</SCRIPT>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milo个人博客管理系统</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/style.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/login.css">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon.png">
+<link rel="shortcut icon" href="images/icon/favicon.ico">
+<script src="${pageContext.request.contextPath}/static/admin/js/jquery-2.1.4.min.js"></script>
+<!--[if gte IE 9]>
+  <script src="${pageContext.request.contextPath}/static/admin/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="${pageContext.request.contextPath}/static/admin/js/html5shiv.min.js" type="text/javascript"></script>
+  <script src="${pageContext.request.contextPath}/static/admin/js/respond.min.js" type="text/javascript"></script>
+  <script src="${pageContext.request.contextPath}/static/admin/js/selectivizr-min.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+  <script>window.location.href='upgrade-browser.html';</script>
+<![endif]-->
 </head>
-<body>
-<DIV class="top_div">
-</DIV>
-<form action="${pageContext.request.contextPath}/blogger/login.do" method="post" onsubmit="return checkForm()">
-	<DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 200px; text-align: center;">
-		<DIV style="width: 165px; height: 96px; position: absolute;">
-			<DIV class="tou">
-			</DIV>
-			<DIV class="initial_left_hand" id="left_hand">
-			</DIV>
-			<DIV class="initial_right_hand" id="right_hand">
-			</DIV>
-		</DIV>
-		<P style="padding: 30px 0px 10px; position: relative;">
-			<SPAN class="u_logo"></SPAN>
-			<INPUT id="userName" name="userName" class="ipt" type="text" placeholder="请输入用户名" value="${blogger.userName }"> 
-	    </P>
-		<P style="position: relative;">
-			<SPAN class="p_logo"></SPAN>         
-			<INPUT id="password" name="password" class="ipt"  type="password" placeholder="请输入密码" value="${blogger.password }">   
-	  	</P>
-		<DIV style="height: 50px; line-height: 50px; margin-top: 30px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
-			<P style="margin: 0px 35px 20px 45px;">
-			<SPAN style="float: left;">Java开源博客系统</SPAN> 
-			<span><font color="red" id="error">${errorInfo }</font></span>
-	        <SPAN style="float: right;"> 
-	              <input type="submit" style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="登录"/> 
-	         </SPAN>         
-	         </P>
-	    </DIV>
-	</DIV>
-</form>
-<div style="text-align:center;padding-top: 30px">
-Copyright © 2012-2016 Java知识分享网 版权所有
+
+<body class="user-select" style="background-repeat:no-repeat; background-image: url('static/admin/images/login/bg_login.jpg');background-size:100% 100%;">
+<div class="container">
+  <div class="siteIcon"><img src="${pageContext.request.contextPath}/static/admin/images/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用Milo个人博客管理系统" draggable="false" /></div>
+  <form action="${pageContext.request.contextPath}/blogger/login.do" method="post" method="post" autocomplete="off" class="form-signin">
+    <h2 class="form-signin-heading">管理员登录</h2>
+    <label for="userName" class="sr-only">用户名</label>
+    <input type="text" id="userName" name="userName" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
+    <label for="userPwd" class="sr-only">密码</label>
+    <input type="password" id="userPwd" name="password" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
+  </form>
+  <div class="footer">
+    <p><a href="index.html" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">回到前台 →</a></p>
+  </div>
 </div>
+<div style="text-align:center;padding-top: 25%">
+Copyright © 2014-2018 Milo个人博客 版权所有
+</div>
+<script src="${pageContext.request.contextPath}/static/admin/js/bootstrap.min.js"></script> 
+<script>
+$('[data-toggle="tooltip"]').tooltip();
+window.oncontextmenu = function(){
+	//return false;
+};
+$('.siteIcon img').click(function(){
+	window.location.reload();
+});
+$('#signinSubmit').click(function(){
+	if($('#userName').val() === ''){
+		$(this).text('用户名不能为空');
+	}else if($('#userPwd').val() === ''){
+		$(this).text('密码不能为空');
+	}else{
+		$(this).text('请稍后...');
+	}
+});
+</script>
 </body>
 </html>
