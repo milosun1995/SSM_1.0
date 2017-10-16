@@ -18,7 +18,7 @@ public interface BlogTypeDao {
 	 * @return
 	 */
 	public List<BlogType> countList();
-	
+
 	/**
 	 * 通过id查询博客类型
 	 * @param id

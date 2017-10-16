@@ -37,7 +37,7 @@
 }
 
 .pfys:hover {
-    height: 88px;
+    height: 120px;
     color: #008AFC
 }
 
@@ -59,16 +59,23 @@
 }
 
 .pfy1 {
-    background-color: #222222;
+    background-color: #fcf6b1;
     width: 15px;
     height: 15px;
 }
 
 .pfy2 {
-    background-color: #f4f4f4;
+    background-color: #222222;
     border: 1px solid #D8D8D8;
     width: 14px;
     height: 14px;
+}
+
+.pfy3 {
+    background-color: #f4f4f4;
+    border: 1px solid #D8D8D8;
+    width: 13px;
+    height: 13px;
 }
 
 .pfys a:hover {

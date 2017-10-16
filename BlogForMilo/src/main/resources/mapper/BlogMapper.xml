@@ -21,6 +21,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT DATE_FORMAT(releaseDate,'%Y年%m月') AS releaseDateStr ,COUNT(*) AS blogCount  FROM t_blog GROUP BY DATE_FORMAT(releaseDate,'%Y年%m月') ORDER BY DATE_FORMAT(releaseDate,'%Y年%m月') DESC;
 	</select>
 	
+	
+	<select id="moodList"  resultMap="BlogResult">
+		SELECT DATE_FORMAT(releaseDate,'%Y年%m月%d日') AS releaseDateStr ,title AS title ,summary AS summary FROM t_blog ORDER BY DATE_FORMAT(releaseDate,'%Y年%m月%d日') DESC;
+	</select>
+	
+	
 	<select id="clickHitList" parameterType="Map" resultMap="BlogResult">
 		select * from t_blog order by clickHit desc
 			limit 0,20

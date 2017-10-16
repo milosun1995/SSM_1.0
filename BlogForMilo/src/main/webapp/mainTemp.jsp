@@ -15,6 +15,7 @@
 <meta name="format-detection" content="telephone=no" />
 <!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /> -->
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-cache" />
 <meta name="keywords" content="个人博客,Milo个人博客,个人博客系统,Milo博客,Milo">
 <meta name="description" content="Milo博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
 <link rel="Shortcut Icon" href="favicon.ico" />
@@ -27,6 +28,7 @@
 <link rel="stylesheet"  href="${pageContext.request.contextPath}/static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" />
 <link rel="stylesheet"  href="${pageContext.request.contextPath}/static/css/common.css" />
 <link rel="stylesheet"  href="${pageContext.request.contextPath}/static/plugin/pifu/pifu.css" />
+<link rel="stylesheet"  href="${pageContext.request.contextPath}/static/css/timeline.css" />
 <!--[if lt IE 9]>
 <link href="/staticRes/lib/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
 <![endif]-->
@@ -40,16 +42,16 @@
 	<jsp:include page="${mainPage }"></jsp:include>
 </section>
 <jsp:include page="/foreground/common/foot.jsp"/>
+${mainPage }
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/layer/3.0/layer.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/pifu/pifu.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/common.js"></script>
 <script> $(function(){ $(window).on("scroll",backToTopFun); backToTopFun(); }); </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
-<%-- <jsp:include page="${mainPage }"></jsp:include> --%><!-- 存放执行js -->
-<!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">   -->
-<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 <script>
 $(function(){
 //幻灯片

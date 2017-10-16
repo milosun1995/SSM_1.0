@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.blog.milo.entity.Blog;
+import org.blog.milo.entity.BlogType;
 
 
 /**
@@ -18,6 +19,12 @@ public interface BlogDao {
 	 * @return
 	 */
 	public List<Blog> countList();
+	
+	/**
+	 * 查询博客历程
+	 * @return
+	 */
+	public List<Blog> moodList();
 	
 	/**
 	 * 分页查询博客

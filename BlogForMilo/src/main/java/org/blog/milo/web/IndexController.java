@@ -94,4 +94,13 @@ public class IndexController {
 		mav.setViewName("mainTemp");
 		return mav;
 	}
+	
+	@RequestMapping("/mood")
+	public ModelAndView mood()throws Exception{
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("mainPage", "foreground/mood/mood.jsp");
+		mav.setViewName("mainTemp");
+		return mav;
+	}
+	
 }

@@ -12,8 +12,8 @@
                 <ul class="cl">
                     <li class="active"><a href="${pageContext.request.contextPath}/index.html" data-hover="首页">首页</a> </li>
                     <li><a href="${pageContext.request.contextPath}/blogger/aboutMe.html" data-hover="关于我">关于我</a> </li>
-                    <li><a href="${pageContext.request.contextPath}/download.html" data-hover="碎言碎语">碎言碎语</a> </li>
-                    <li><a href="${pageContext.request.contextPath}/download.html" data-hover="学无止尽">学无止尽</a></li>
+                    <li><a href="${pageContext.request.contextPath}/download.html" data-hover="源码介绍">源码介绍</a> </li>
+                    <li><a href="${pageContext.request.contextPath}/mood.html" data-hover="归档">归档</a></li>
                     <li><a href="${pageContext.request.contextPath}/download.html" data-hover="留言板">留言板</a> </li>
                 </ul>
             </nav>

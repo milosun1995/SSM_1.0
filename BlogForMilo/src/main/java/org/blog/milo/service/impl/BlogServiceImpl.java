@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.blog.milo.dao.BlogDao;
 import org.blog.milo.entity.Blog;
+import org.blog.milo.entity.BlogType;
 import org.blog.milo.service.BlogService;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,10 @@ public class BlogServiceImpl implements BlogService{
 		return blogDao.countList();
 	}
 
+	public List<Blog> moodList() {
+		return blogDao.moodList();
+	}
+	
 	public List<Blog> list(Map<String, Object> map) {
 		return blogDao.list(map);
 	}

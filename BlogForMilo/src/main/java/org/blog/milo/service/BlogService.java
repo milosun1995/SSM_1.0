@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.blog.milo.entity.Blog;
+import org.blog.milo.entity.BlogType;
 
 /**
  * 博客Service接口
@@ -17,6 +18,12 @@ public interface BlogService {
 	 * @return
 	 */
 	public List<Blog> countList(); 
+	
+	/**
+	 * 根据日期月份分组查询博客历程
+	 * @return
+	 */
+	public List<Blog> moodList();
 	
 	/**
 	 * 分页查询博客

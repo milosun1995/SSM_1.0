@@ -36,12 +36,10 @@
 				<a href="#" class="pic"><img class="lazyload" data-original="temp/art.jpg" alt="应该选" /></a>
 				<h4 class="title">
 					<a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html">${blog.title }</a>
-					<!-- <a href="article_detail.html">个人博客应该选择什么样的域名和域名后缀</a> -->
 				</h4>
 				<div class="date_hits">
 					<span>老王</span> <span>
 					<fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm" /></span> 
-					<%-- <span><a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html">${blog.title }</a></span> --%>
 					<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> (${blog.clickHit})°</p>
 					<p class="commonts"><i class="Hui-iconfont" title="评论量">&#xe622;</i> <span class="cy_cmt_count">(${blog.replyHit})</span></p>
 				</div>

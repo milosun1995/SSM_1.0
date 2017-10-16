@@ -51,6 +51,9 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 		List<Blog> blogCountList=blogService.countList(); // 根据日期分组查询博客
 		application.setAttribute("blogCountList", blogCountList);
 		
+		List<Blog> blogMoodList=blogService.moodList(); // 根据日期分组查询博客历程
+		application.setAttribute("blogMoodList", blogMoodList);
+		
 		List<Blog> blogClickHitList=blogService.clickHitList(); // 查询博客热度排名
 		application.setAttribute("blogClickHitList", blogClickHitList);
 		
