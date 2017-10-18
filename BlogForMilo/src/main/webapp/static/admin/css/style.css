@@ -3,14 +3,14 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, butt
 	margin: 0;
 	padding: 0;
 }
-body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, button, input, textarea, p, span, th, td, article, aside, nav, section, img, a, table, tbody, tr, label {
+/* body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, button, input, textarea, p, span, th, td, article, aside, nav, section, img, a, table, tbody, tr, label {
 	outline: none;
 	transition: all 0.30s ease-in-out;
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-}
+} */
 dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, span, th, tr, td {
 	cursor: default;
 }
@@ -25,8 +25,8 @@ body {
 }
 /*页面滚动条*/
 html::-webkit-scrollbar {
- width:6px;
- height:6px;
+  width:3px;
+ height:3px;
  background:#CCC;
 }
 html::-webkit-scrollbar-button {

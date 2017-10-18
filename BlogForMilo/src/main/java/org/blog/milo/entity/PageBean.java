@@ -34,8 +34,7 @@ public class PageBean {
 	}
 
 	public int getStart() {
-		return (page-1)*pageSize;
+		return page;
 	}
-	
 	
 }

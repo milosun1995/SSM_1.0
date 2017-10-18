@@ -39,7 +39,7 @@ public class BloggerController {
 		UsernamePasswordToken token=new UsernamePasswordToken(blogger.getUserName(), CryptographyUtil.md5(blogger.getPassword(), "java1234"));
 		try{
 			subject.login(token); // µÇÂ¼ÑéÖ¤
-			return "redirect:/admin/main.jsp";
+			return "redirect:/common/mainTemp.jsp";
 		}catch(Exception e){
 			e.printStackTrace();
 			request.setAttribute("blogger", blogger);

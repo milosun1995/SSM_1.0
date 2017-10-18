@@ -42,7 +42,6 @@
 	<jsp:include page="${mainPage }"></jsp:include>
 </section>
 <jsp:include page="/foreground/common/foot.jsp"/>
-${mainPage }
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/h-ui/js/H-ui.min.js"></script>

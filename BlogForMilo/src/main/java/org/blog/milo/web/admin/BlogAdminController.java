@@ -12,11 +12,14 @@ import org.blog.milo.entity.Blog;
 import org.blog.milo.entity.PageBean;
 import org.blog.milo.lucene.BlogIndex;
 import org.blog.milo.service.BlogService;
+import org.blog.milo.utils.DataTableBean;
 import org.blog.milo.utils.ResponseUtil;
 import org.blog.milo.utils.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -65,6 +68,15 @@ public class BlogAdminController {
 		return null;
 	}
 	
+	
+	@RequestMapping("/listPage")
+	public ModelAndView listPage() {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("mainPage", "/admin/article/article_page_list.jsp");
+		mav.setViewName("common/mainTemp");
+		return mav;
+	}
+	
 	/**
 	 * 分页查询博客信息
 	 * @param page
@@ -75,8 +87,9 @@ public class BlogAdminController {
 	 * @throws Exception
 	 */
 	@RequestMapping("/list")
-	public String list(@RequestParam(value="page",required=false)String page,@RequestParam(value="rows",required=false)String rows,Blog s_blog,HttpServletResponse response)throws Exception{
-		PageBean pageBean=new PageBean(Integer.parseInt(page),Integer.parseInt(rows));
+	public String list(DataTableBean dataTableBean ,Blog s_blog,HttpServletResponse response)throws Exception{
+		PageBean pageBean=new PageBean(Integer.valueOf(dataTableBean.getStart()),Integer.valueOf(dataTableBean.getLength()));//Integer.parseInt(page),Integer.parseInt(rows)
+		System.out.println(Integer.valueOf(dataTableBean.getStart())+"-------------------------"+Integer.valueOf(dataTableBean.getLength()));
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("title", StringUtil.formatLike(s_blog.getTitle()));
 		map.put("start", pageBean.getStart());
@@ -87,8 +100,12 @@ public class BlogAdminController {
 		JsonConfig jsonConfig=new JsonConfig();
 		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new DateJsonValueProcessor("yyyy-MM-dd"));
 		JSONArray jsonArray=JSONArray.fromObject(blogList,jsonConfig);
-		result.put("rows", jsonArray);
-		result.put("total", total);
+		
+		result.put("draw", Integer.valueOf(dataTableBean.getDraw()));
+		result.put("recordsTotal", total);
+		result.put("recordsFiltered", total);
+		result.put("data", jsonArray);
+
 		ResponseUtil.write(response, result);
 		return null;
 	}
@@ -103,12 +120,16 @@ public class BlogAdminController {
 	@RequestMapping("/delete")
 	public String delete(@RequestParam(value="ids")String ids,HttpServletResponse response)throws Exception{
 		String []idsStr=ids.split(",");
-		for(int i=0;i<idsStr.length;i++){
-			blogService.delete(Integer.parseInt(idsStr[i]));
-			blogIndex.deleteIndex(idsStr[i]); // 删除对应博客的索引
-		}
 		JSONObject result=new JSONObject();
-		result.put("success", true);
+		try {
+			for(int i=0;i<idsStr.length;i++){
+				blogService.delete(Integer.parseInt(idsStr[i]));
+				blogIndex.deleteIndex(idsStr[i]); // 删除对应博客的索引
+			}
+			result.put("success", true);
+		} catch (Exception e) {
+			result.put("fail", false);
+		}
 		ResponseUtil.write(response, result);
 		return null;
 	}

@@ -31,9 +31,9 @@
   <form action="${pageContext.request.contextPath}/blogger/login.do" method="post" method="post" autocomplete="off" class="form-signin">
     <h2 class="form-signin-heading">管理员登录</h2>
     <label for="userName" class="sr-only">用户名</label>
-    <input type="text" id="userName" name="userName" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
+    <input type="text" id="userName" name="userName" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10" value="java1234">
     <label for="userPwd" class="sr-only">密码</label>
-    <input type="password" id="userPwd" name="password" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18">
+    <input type="password" id="userPwd" name="password" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18" value="123456">
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
   </form>
   <div class="footer">
