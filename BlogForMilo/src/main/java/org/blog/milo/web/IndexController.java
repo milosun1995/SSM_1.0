@@ -15,10 +15,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.blog.milo.entity.Blog;
+import org.blog.milo.entity.Blogger;
 import org.blog.milo.entity.PageBean;
 import org.blog.milo.service.BlogService;
+import org.blog.milo.utils.CryptographyUtil;
 import org.blog.milo.utils.PageUtil;
 import org.blog.milo.utils.StringUtil;
 
@@ -103,4 +107,14 @@ public class IndexController {
 		return mav;
 	}
 	
+	/**
+	 * 后台admin登录页面请求
+	 * @param blogger
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/login")
+	public String login(){
+		return "login";
+	}
 }

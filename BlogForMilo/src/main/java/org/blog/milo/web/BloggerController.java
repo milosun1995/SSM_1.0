@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * ²©Ö÷Controller²ã
- * @author java1234_Ð¡·æ
+ * @author MILO
  *
  */
 @Controller

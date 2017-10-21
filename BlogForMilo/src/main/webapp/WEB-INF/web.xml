@@ -6,6 +6,7 @@
 	<welcome-file-list>
 		<welcome-file>a.jsp</welcome-file>
 	</welcome-file-list>
+	
 	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -14,14 +15,17 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
+	
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/spring-*.xml</param-value>
 	</context-param>
+	
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -31,16 +35,19 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
+	
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>org.blog.milo.service.impl.InitComponent</listener-class>
 	</listener>
+	
 	<listener>
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
@@ -52,14 +59,25 @@
 			<param-value>classpath:spring/spring-*.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
-    	<async-supported>true</async-supported>
+		<async-supported>true</async-supported>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SpringMVC</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-		<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>SpringMVC</servlet-name>
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
+
+	<!-- 404页面 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/front_404.jsp</location>
+	</error-page>
+	
+	<!-- 设定系统session 有效时间-->
+	<session-config> 
+		<session-timeout>10</session-timeout> 
+	</session-config> 
 </web-app>
