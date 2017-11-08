@@ -17,7 +17,7 @@ import org.blog.milo.service.BloggerService;
 
 /**
  * 自定义Realm
- * @author java1234_小锋
+ * @author Milo
  *
  */
 public class MyRealm extends AuthorizingRealm{
@@ -42,7 +42,7 @@ public class MyRealm extends AuthorizingRealm{
 		Blogger blogger=bloggerService.getByUserName(userName);
 		if(blogger!=null){
 			SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger); // 当前用户信息存到session中
-			AuthenticationInfo authcInfo=new SimpleAuthenticationInfo(blogger.getUserName(),blogger.getPassword(),"xx");
+			AuthenticationInfo authcInfo=new SimpleAuthenticationInfo(blogger.getUserName(),blogger.getPassword(),"java");
 			return authcInfo;
 		}else{
 			return null;				
