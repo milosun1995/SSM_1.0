@@ -8,8 +8,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /> -->
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="keywords" content="个人博客,Milo个人博客,个人博客系统,Milo博客,Milo">
+<meta name="description" content="Milo博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
+<link rel="Shortcut Icon" href="${pageContext.request.contextPath}/favicon.ico" />
+<title>Milo 博客后台管理系统</title>
 <!-- DataTables CSS -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/style.css">
@@ -19,7 +27,6 @@
 <!-- 百度编辑器 ueditor-->
 <link href="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/themes/iframe.css" rel="stylesheet">
 <link rel="apple-touch-icon-precomposed" href="images/icon/icon.png">
-<link rel="shortcut icon" href="images/icon/favicon.ico">
 <script src="${pageContext.request.contextPath}/static/admin/js/jquery-2.1.4.min.js"></script>
 <!--[if gte IE 9]>
   <script src="${pageContext.request.contextPath}/static/admin/js/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -52,7 +59,6 @@ $(document).ready(function(){
 	  });
 	});
 	function clickShow(url){
-		console.log(url);
 		$("#body-div").load(url);
 	}
 </script>
