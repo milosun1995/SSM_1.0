@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/org/blog/milo/utils/CryptographyUtil.java=UTF-8
+encoding//src/main/webapp/admin/article/article_page_edit.jsp=UTF-8
 encoding//src/main/webapp/static/css/common.css=UTF-8
+encoding//src/main/webapp/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/jsp/config.json=UTF-8
+encoding//src/main/webapp/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/themes/iframe.css=UTF-8

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" isErrorPage="true"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +16,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/admin/css/font-awesome.min.css">
 <link href="${pageContext.request.contextPath}/static/admin/css/build.css" rel="stylesheet">
-
+<!-- 百度编辑器 ueditor-->
+<link href="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/themes/iframe.css" rel="stylesheet">
 <link rel="apple-touch-icon-precomposed" href="images/icon/icon.png">
 <link rel="shortcut icon" href="images/icon/favicon.ico">
 <script src="${pageContext.request.contextPath}/static/admin/js/jquery-2.1.4.min.js"></script>
@@ -27,6 +30,12 @@
 <!--[if lt IE 9]>
   <script>window.location.href='upgrade-browser.html';</script>
 <![endif]-->
+
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/ueditor.all.js"></script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	  $(".sidebar ul li").click(function(){
@@ -42,6 +51,10 @@ $(document).ready(function(){
 	      $("#body-div").load(url);
 	  });
 	});
+	function clickShow(url){
+		console.log(url);
+		$("#body-div").load(url);
+	}
 </script>
 </head>
 <body class="user-select" style="padding-right: 0px;">
@@ -204,6 +217,8 @@ $(document).ready(function(){
 <script type="text/javascript" charset="utf8" src="${pageContext.request.contextPath}/static/admin/js/admin-scripts.js"></script>
 <!--bootbox.js  -->
 <script type="text/javascript" charset="utf8" src="${pageContext.request.contextPath}/static/admin/js/bootbox.min.js"></script>
+<!--  -->
+<script id="uploadEditor" type="text/plain" style="display:none;"></script>
 <!-- <script type="text/javascript">
     function changeState(el) {
         if (el.readOnly) el.checked=el.readOnly=false;

@@ -4,7 +4,7 @@
       <form action="/admin/blog/delete.do" method="post" >
         <h1 class="page-header">操作</h1>
         <ol class="breadcrumb">
-          <li><a href="add-article.html">增加文章</a></li>
+          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_edit.jsp')">增加文章</a></li>
         </ol>
         <h1 class="page-header">管理 </h1>
         <div class="table-responsive">

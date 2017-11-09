@@ -77,6 +77,14 @@ public class BlogAdminController {
 		return mav;
 	}
 	
+	@RequestMapping("/newPage")
+	public ModelAndView newPage() {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("mainPage", "/admin/article/article_page_edit.jsp");
+		mav.setViewName("common/mainTemp");
+		return mav;
+	}
+	
 	/**
 	 * 分页查询博客信息
 	 * @param page
