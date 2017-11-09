@@ -52,7 +52,7 @@ public class BlogIndex {
 	 * @throws Exception
 	 */
 	private IndexWriter getWriter()throws Exception{
-		dir=FSDirectory.open(Paths.get("D://BlogLucene"));
+		dir=FSDirectory.open(Paths.get("C://BlogLucene"));
 		SmartChineseAnalyzer analyzer=new SmartChineseAnalyzer();
 		IndexWriterConfig iwc=new IndexWriterConfig(analyzer);
 		IndexWriter writer=new IndexWriter(dir, iwc);
