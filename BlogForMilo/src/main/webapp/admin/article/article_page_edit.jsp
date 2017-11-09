@@ -15,7 +15,7 @@
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>描述</span></h2>
               <div class="add-article-box-content">
-              	<textarea class="form-control" name="describe" autocomplete="off"></textarea>
+              	<textarea class="form-control" name="describe" autocomplete="off" id="summary"></textarea>
                 <span class="prompt-text">描述是可选的手工创建的内容总结，并可以在网页描述中使用</span>
               </div>
             </div>
@@ -63,7 +63,6 @@
           </div>
       </div>
     </div>
-  </div>
 <script type="text/javascript">
 UE.delEditor("article-content");
 var editor = UE.getEditor("article-content");
@@ -105,6 +104,7 @@ function submitData(){
 	var blogTypeId=$("#blogTypeId").val();
 	
 	var content=UE.getEditor('article-content').getContent();
+	var summary=$("#summary").val();
 	var keyWord=$("#keyWord").val();
 	
 	if(title==null || title==''){
@@ -114,7 +114,7 @@ function submitData(){
 	}else if(content==null || content==''){
 		alert("请输入内容！");
 	}else{
-		$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('article-content').getContentTxt(),'summary':UE.getEditor('article-content').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
+		$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('article-content').getContentTxt(),'summary':summary,'keyWord':keyWord},function(result){
 			if(result.success){
 				alert("博客发布成功！");
 				resetValue();
