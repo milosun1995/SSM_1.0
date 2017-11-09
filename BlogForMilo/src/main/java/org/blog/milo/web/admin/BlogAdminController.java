@@ -73,7 +73,7 @@ public class BlogAdminController {
 	public ModelAndView listPage() {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("mainPage", "/admin/article/article_page_list.jsp");
-		mav.setViewName("common/mainTemp");
+		mav.setViewName("admin/template/mainTemp");
 		return mav;
 	}
 	
@@ -81,7 +81,7 @@ public class BlogAdminController {
 	public ModelAndView newPage() {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("mainPage", "/admin/article/article_page_edit.jsp");
-		mav.setViewName("common/mainTemp");
+		mav.setViewName("admin/template/mainTemp");
 		return mav;
 	}
 	
@@ -149,12 +149,14 @@ public class BlogAdminController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping("/findById")
-	public String findById(@RequestParam(value="id")String id,HttpServletResponse response)throws Exception{
+	@RequestMapping("/updatePage")
+	public ModelAndView updatePage(@RequestParam(value="id")String id,HttpServletResponse response)throws Exception{
+		ModelAndView mav=new ModelAndView();
 		Blog blog=blogService.findById(Integer.parseInt(id));
-		JSONObject jsonObject=JSONObject.fromObject(blog);
-		ResponseUtil.write(response, jsonObject);
-		return null;
+		mav.addObject("mainPage", "/admin/article/article_page_edit.jsp");
+		mav.addObject("bean",blog);
+		mav.setViewName("admin/template/mainTemp");
+		return mav;
 	}
 	
 	

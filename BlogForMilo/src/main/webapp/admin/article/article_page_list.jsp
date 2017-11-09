@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/include/page_delete.jsp"%>
+<%@ include file="/admin/include/page_delete.jsp"%>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
       <form action="/admin/blog/delete.do" method="post" >
         <h1 class="page-header">操作</h1>
         <ol class="breadcrumb">
-          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_edit.jsp')">增加文章</a></li>
+          <li><a href="${pageContext.request.contextPath}/admin/blog/newPage.html">增加文章</a></li>
         </ol>
         <h1 class="page-header">管理 </h1>
         <div class="table-responsive">
@@ -39,7 +39,7 @@
     <script>
     $(document).ready(function() {
     	$('#ht-dataTables').DataTable({
-			<%@ include file="/common/include/dt.jsp"%>
+			<%@ include file="/admin/include/dt.jsp"%>
 			ajax:{
 				url: "${pageContext.request.contextPath}/admin/blog/list.do",
 				type: "POST"
@@ -63,11 +63,11 @@
 	        	{ "data": null,
 	            	render: function(data,type,row,meta){
 	            		var str = "<div style='text-align:center;'>"+
-					            		"<button type='button' id='btn-update' class='btn btn-normal btn-xs' onclick='doUpdate(" +  '"' + row.id + '",""' + ")'>" +  
+					            		"<button type='button' id='btn-update' class='btn btn-normal btn-xs' onclick='doUpdate(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/updatePage.html"'	 + ")'>" +  
 											"修改" + 
 										"</button>"+ 
 										"&nbsp;" + 
-										"<button type='button' id='btn-delete' class='btn btn-danger btn-xs' onclick='doDelete(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/delete.do"' + ")'>" +  
+										"<button type='button' id='btn-delete' class='btn btn-danger btn-xs' onclick='doDelete(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/delete.html"'	 + ")'>" +  
 											"删除" + 
 										"</button>"+
 									"</div>";
@@ -80,5 +80,8 @@
 		        ]
     	 });
     });
-    
+    function doUpdate (id,url){
+    	location.href=url+"?id="+id;
+    }
+
     </script>

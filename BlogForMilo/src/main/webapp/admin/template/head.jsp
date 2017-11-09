@@ -8,6 +8,10 @@
           <a class="navbar-brand" href="/">YlsatCMS</a> </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_list.jsp')">文章</a></li>
+          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_list.jsp')">栏目</a></li>
+          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_list.jsp')">留言</a></li>
+          <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/article/article_page_list.jsp')">评论</a></li>
             <li><a href="">消息 <span class="badge">1</span></a></li>
             <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">admin <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-left">

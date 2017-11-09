@@ -44,35 +44,35 @@
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/static/plugin/ueditor1_4_3_3-utf8-jsp/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	  $(".sidebar ul li").click(function(){
-		  /* 取消已选定菜单高亮显示 */
-		  $(".sidebar ul li").each(function(){
-			  $(this).removeClass("active");
-		  });
-		  /* 添加新选择菜单高亮显示 */
-		  $(this).addClass("active").siblings().removeClass("active");
-		  /* 获取选定指定菜单的url*/
-		  var url=$(this).children("a").children("input").val();
-		  /* 将该菜单所呈现的页面回显 */
-	      $("#body-div").load(url);
-	  });
-	});
-	function clickShow(url){
-		$("#body-div").load(url);
-	}
+// $(document).ready(function(){
+// 	  $(".sidebar ul li").click(function(){
+// 		  /* 取消已选定菜单高亮显示 */
+// 		  $(".sidebar ul li").each(function(){
+// 			  $(this).removeClass("active");
+// 		  });
+// 		  /* 添加新选择菜单高亮显示 */
+// 		  $(this).addClass("active").siblings().removeClass("active");
+// 		  /* 获取选定指定菜单的url*/
+// 		  var url=$(this).children("a").children("input").val();
+// 		  /* 将该菜单所呈现的页面回显 */
+// 	      $("#body-div").load(url);
+// 	  });
+// 	});
+// 	function clickShow(url){
+// 		$("#body-div").load(url);
+// 	}
 </script>
 </head>
 <body class="user-select" style="padding-right: 0px;">
 <section class="container-fluid">
     <!-- header  menu -->
-    <jsp:include page="/common/head.jsp"/>
+    <jsp:include page="/admin/template/head.jsp"/>
   <div class="row">
     <!-- left aside menu -->
-    <jsp:include page="/common/aside.jsp"/>
-    <!-- body info -->
+    <jsp:include page="/admin/template/aside.jsp"/>
     <div id="body-div">
-     <jsp:include page="/admin/main.jsp"/> 
+     <jsp:include page="${mainPage }"/>
+    <%--  <jsp:include page="/admin/main.jsp"/> --%> 
     </div>
   </div>
 </section>
