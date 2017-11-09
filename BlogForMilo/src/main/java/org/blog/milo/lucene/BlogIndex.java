@@ -110,7 +110,7 @@ public class BlogIndex {
 	 * @throws Exception
 	 */
 	public List<Blog> searchBlog(String q)throws Exception{
-		dir=FSDirectory.open(Paths.get("D://BlogLucene"));
+		dir=FSDirectory.open(Paths.get("C://BlogLucene"));
 		IndexReader reader = DirectoryReader.open(dir);
 		IndexSearcher is=new IndexSearcher(reader);
 		BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
