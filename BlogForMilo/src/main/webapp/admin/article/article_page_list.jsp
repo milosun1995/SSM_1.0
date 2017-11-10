@@ -40,7 +40,7 @@
     $(document).ready(function() {
     	$('#ht-dataTables').DataTable({
 			<%@ include file="/admin/include/dt.jsp"%>
-			ajax:{
+			"ajax":{
 				url: "${pageContext.request.contextPath}/admin/blog/list.do",
 				type: "POST"
 			},
