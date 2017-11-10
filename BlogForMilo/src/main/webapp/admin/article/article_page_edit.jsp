@@ -11,6 +11,7 @@
             <div class="form-group" style="width: 100%">
               <label for="article-content" class="sr-only">内容</label>
               <script id="article-content" name="content" type="text/plain"></script>
+              <textarea class="hidden" id="content">${bean.content}</textarea>
             </div>
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>描述</span></h2>
@@ -72,7 +73,7 @@ UE.delEditor("article-content");
 var editor = UE.getEditor("article-content");
 //监听editor是否已经加载完成，如果加载完成回掉函数
 editor.addListener("ready", function () {
-	editor.setContent('${bean.content}');
+	editor.setContent($("#content").val());
 });
 $('#upImage').click(function () {
     var myImage = _uploadEditor.getDialog("insertimage");
