@@ -44,7 +44,7 @@
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>标题图片</span></h2>
               <div class="add-article-box-content">
-                <input type="text"  class="form-control" placeholder="点击按钮选择图片" id="pictureUpload" name="titlepic" autocomplete="off">
+                <input type="text"  class="form-control" placeholder="点击按钮选择图片" id="titlePic" name="titlePic" autocomplete="off" value="${bean.titlePic}">
               </div>
               <div class="add-article-box-footer">
                 <button class="btn btn-default" type="button" id="upImage">选择</button>
@@ -84,9 +84,9 @@ $(function () {
         //侦听图片上传
         _uploadEditor.addListener('beforeInsertImage', function (t, arg) {
             //将地址赋值给相应的input,只去第一张图片的路径
-            $("#pictureUpload").attr("value", arg[0].src);
+            $("#titlePic").attr("value", arg[0].src);
             //图片预览
-            //$("#imgPreview").attr("src", arg[0].src);
+            $("#imgPreview").attr("src", arg[0].src);
         })
         //侦听文件上传，取上传文件列表中第一个上传的文件的路径
         _uploadEditor.addListener('afterUpfile', function (t, arg) {
@@ -108,7 +108,7 @@ function upFiles() {
 function submitData(){
 	var title=$("#title").val();
 	var blogTypeId=$("#blogTypeId").val();
-	
+	var titlePic=$("#titlePic").val();
 	var content=UE.getEditor('article-content').getContent();
 	var summary=$("#summary").val();
 	var keyWord=$("#keyWord").val();
@@ -120,7 +120,7 @@ function submitData(){
 	}else if(content==null || content==''){
 		alert("请输入内容！");
 	}else{
-		$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'id':'${param.id}','title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('article-content').getContentTxt(),'summary':summary,'keyWord':keyWord},function(result){
+		$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'id':'${param.id}','title':title,'blogType.id':blogTypeId,'titlePic':titlePic,'content':content,'contentNoTag':UE.getEditor('article-content').getContentTxt(),'summary':summary,'keyWord':keyWord},function(result){
 			if(result.success){
 				alert("博客发布成功！");
 				resetValue();

@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="replyHit" column="replyHit"/>
 		<result property="content" column="content"/>
 		<result property="keyWord" column="keyWord"/>
+		<result property="titlePic" column="titlePic"/>
 		<association property="blogType" column="typeId" select="org.blog.milo.dao.BlogTypeDao.findById"></association>
 	</resultMap>
 	
@@ -93,6 +94,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="keyWord!=null and keyWord!='' ">
 				keyWord=#{keyWord},
 			</if>
+			<if test="titlePic!=null ">
+				titlePic=#{titlePic},
+			</if>
 		</set>
 		where id=#{id}
 	</update>
@@ -107,7 +111,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="Blog">
-		insert into t_blog values(null,#{title},#{summary},now(),0,0,#{content},#{blogType.id},#{keyWord})
+		insert into t_blog values(null,#{title},#{summary},now(),0,0,#{content},#{blogType.id},#{keyWord},#{titlePic})
 	</insert>
 	
 	<delete id="delete" parameterType="Integer">

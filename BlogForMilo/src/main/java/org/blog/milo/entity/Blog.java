@@ -26,6 +26,7 @@ public class Blog implements Serializable {
 	private String content; // 博客内容
 	private String contentNoTag; // 博客内容 无网页标签 Lucene分词用
 	private BlogType blogType; // 博客类型
+	private String titlePic;
 	
 	private Integer blogCount; // 博客数量 非博客实际属性，主要是 根据发布日期归档查询博客数量用
 	private String releaseDateStr; // 发布日期字符串 只取年和月
@@ -105,14 +106,16 @@ public class Blog implements Serializable {
 	public void setKeyWord(String keyWord) {
 		this.keyWord = keyWord;
 	}
-	
+	public String getTitlePic() {
+		return titlePic;
+	}
+	public void setTitlePic(String titlePic) {
+		this.titlePic = titlePic;
+	}
 	public List<String> getImagesList() {
 		return imagesList;
 	}
 	public void setImagesList(List<String> imagesList) {
 		this.imagesList = imagesList;
 	}
-	
-	
-	
 }
