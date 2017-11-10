@@ -25,7 +25,7 @@
 <![endif]-->
 </head>
 
-<body class="user-select" style="background-repeat:no-repeat; background-image: url('${pageContext.request.contextPath}/static/admin/images/login/bg_login.jpg');background-size:100% 100%;">
+<body class="user-select">
 <div class="container">
   <div class="siteIcon"><img src="${pageContext.request.contextPath}/static/admin/images/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用Milo个人博客管理系统" draggable="false" /></div>
   <form action="${pageContext.request.contextPath}/blogger/login.do" method="post" method="post" autocomplete="off" class="form-signin">
