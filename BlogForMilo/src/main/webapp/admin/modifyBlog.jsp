@@ -108,10 +108,6 @@
             }
         );
     });
-    
-   function  doSave(){
-	   
-   }
 </script>
 </body>
 </html>
