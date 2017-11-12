@@ -69,6 +69,14 @@ var editor = UE.getEditor('article-content');
 window.onresize=function(){
     window.location.reload();
 }
+UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;  
+UE.Editor.prototype.getActionUrl = function(action) {  
+    if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'listimage') {  
+        return '${pageContext.request.contextPath}/admin/ueditorUpload.html';  
+    } else {  
+        return this._bkGetActionUrl.call(this, action);  
+    }  
+}  
 var _uploadEditor;
 $(function () {
     //重新实例化一个编辑器，防止在上面的editor编辑器中显示上传的图片或者文件
@@ -90,6 +98,7 @@ $(function () {
         })
         //侦听文件上传，取上传文件列表中第一个上传的文件的路径
         _uploadEditor.addListener('afterUpfile', function (t, arg) {
+        	console.log(_uploadEditor.options.filePath + arg[0].url);
             $("#fileUpload").attr("value", _uploadEditor.options.filePath + arg[0].url);
         })
     });

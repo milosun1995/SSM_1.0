@@ -7,8 +7,8 @@
     "imageCompressEnable": true, 
     "imageCompressBorder": 1600,
     "imageInsertAlign": "none",
-    "imageUrlPrefix": "/Blog", 
-    "imagePathFormat": "/static/userImages/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "imageUrlPrefix": "http://localhost:8080",
+    "imagePathFormat": "/userImages/{yyyy}{mm}{dd}/{time}{rand:6}",
 
 
 
