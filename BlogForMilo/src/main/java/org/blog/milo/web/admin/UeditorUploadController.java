@@ -28,7 +28,7 @@ public class UeditorUploadController {
 		PrintWriter out = response.getWriter();
 
 		try {
-			String root = "F:\\images";
+			String root = "C:\\images";
 			String fileName = file.getOriginalFilename();
 			String fileSuffix = fileName.substring(fileName.indexOf(".") + 1);
 
