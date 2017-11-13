@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.blog.milo.utils.StringUtil;
+import org.blog.milo.utils.UptokenUtil;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @RequestMapping("/admin")
 public class UeditorUploadController {
-
+	
+	@Autowired
+	UptokenUtil uptokenUtil;
+	
 	@RequestMapping(value = "/ueditorUpload")
 	public void uploadUEditorImage(@RequestParam(value = "upfile", required = false) MultipartFile file,
 			HttpServletResponse response, HttpServletRequest request) throws Exception {
@@ -33,12 +38,21 @@ public class UeditorUploadController {
 			String fileSuffix = fileName.substring(fileName.indexOf(".") + 1);
 
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-			String directory = "\\static\\userImages\\" + dateFormat.format(new Date()) + "\\";
+			String dateDir=dateFormat.format(new Date());
 			// Util.getRandomString(int length)：返回由length个任意字母组成的字符串
-			String path = directory + StringUtil.getRandomString(12) + "." + fileSuffix;
+			String randomString=StringUtil.getRandomString(12);
+			String directory = "\\static\\userImages\\" + dateDir + "\\";
+			String path = directory + randomString + "." + fileSuffix;
+			//create directory
 			new File(root + directory).mkdir();
 			file.transferTo(new File(root + path));
-
+			
+			//jiuniu yun images start
+			String jiuNiuDirectory="static/userImages/"+ dateDir+"/";
+			String jiuNiuPath=jiuNiuDirectory+randomString+"."+ fileSuffix;
+			uptokenUtil.uploadImageToQiNiu(jiuNiuPath, root + path);
+			//jiuniu yun images end
+			
 			json.put("state", "SUCCESS");
 			json.put("title", file.getName());
 			System.out.println(root+"----------"+path);

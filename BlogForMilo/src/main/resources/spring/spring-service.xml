@@ -91,5 +91,6 @@
     
 	<!-- 扫描service包下所有使用注解的类型 -->
 	<context:component-scan base-package="org.blog.milo.service"/>
+	<context:component-scan base-package="org.blog.milo.utils"/>
 	</beans>
 	

@@ -341,7 +341,13 @@
 			<artifactId>pagehelper</artifactId>
 			<version>4.1.6</version>
 		</dependency>
-
+		
+		<!-- qiniu 七牛云存储 images-->
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>[6.1.7, 6.999]</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
