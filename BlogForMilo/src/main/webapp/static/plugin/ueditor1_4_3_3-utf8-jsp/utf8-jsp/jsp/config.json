@@ -7,8 +7,8 @@
     "imageCompressEnable": true, 
     "imageCompressBorder": 1600,
     "imageInsertAlign": "none",
-    "imageUrlPrefix": "http://114.67.146.142:7080",
-    "imagePathFormat": "/userImages/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "imageUrlPrefix": "http://oz4qyvsr6.bkt.clouddn.com",
+    "imagePathFormat": "",
 
 
 
