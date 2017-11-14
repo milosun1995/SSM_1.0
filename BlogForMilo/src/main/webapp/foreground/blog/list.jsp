@@ -33,7 +33,7 @@
 		<ul class="index_arc">
 		<c:forEach var="blog" items="${blogList}">
 			<li class="index_arc_item">
-				<a href="javascript:void(0)" class="pic"><img class="lazyload" data-original="${blog.titlePic }" alt="应该选" /></a>
+				<a href="javascript:void(0)" class="pic"><img class="lazyload" data-original="${blog.titlePic }" alt="Milo Blog" /></a>
 				<h4 class="title">
 					<a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html"><b>${blog.title }</b></a>
 				</h4>
