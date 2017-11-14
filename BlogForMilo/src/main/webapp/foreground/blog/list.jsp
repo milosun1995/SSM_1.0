@@ -38,7 +38,7 @@
 					<a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html"><b>${blog.title }</b></a>
 				</h4>
 				<div class="date_hits">
-					<span>老王</span> <span>
+					<span>Milo</span> <span>
 					<fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm" /></span> 
 					<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> (${blog.clickHit})°</p>
 					<p class="commonts"><i class="Hui-iconfont" title="评论量">&#xe622;</i> <span class="cy_cmt_count">(${blog.replyHit})</span></p>
@@ -58,7 +58,7 @@
 <!--right-->
   <div class="col-sm-3 col-md-3">
   	<!--站点声明-->
-        <div class="panel panel-default mb-20">
+        <div class="panel panel-default mb-30">
             <div class="panel-body">
                 <i class="Hui-iconfont" style="float: left;">&#xe62f;&nbsp;</i>
                 <div class="slideTxtBox">

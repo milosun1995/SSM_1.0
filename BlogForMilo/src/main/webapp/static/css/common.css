@@ -121,11 +121,11 @@ a:hover{
 }
 .index_arc li .pic {
     position: absolute;
+    overflow: hidden;
     left: 15px;
     top: 15px;
-    height: 150px;
-    overflow: hidden;
-    line-height: 110px;
+    height: 120px;
+    line-height: 90%;
     width: 165px;
 }
 .index_arc li .pic img {
@@ -302,14 +302,12 @@ ul.infos {
 }
 
 ul.infos img {
-  max-width: 500px;
-  max-height: 100%;
-  
+  max-width: 70%;
 }
 
 ul.infos p {
     margin-bottom: 5px;
-    padding-right: 10%;
+    
 }
 
 .keybq {
@@ -350,7 +348,7 @@ ul.infos p {
 @media screen and (max-width:640px) {
     .slider .bd img { height: 130px;}/*slider height*/
 	.index_arc li{padding:10px 10px 10px 120px;height: 66px;margin-bottom:  10px;}
-	.index_arc li .title a{max-width: 95%;margin-right: 10px;overflow: hidden;text-overflow:clip;white-space: normal;font-size: 14px;line-height: 20px;height: 40px;}
+	.index_arc li .title a{max-width: 95%;margin-right: 10px;overflow: hidden;text-overflow:clip;white-space: normal;font-size: 8px;line-height: 20px;height: 40px;}
 	.index_arc li .pic{left:10px;top:10px;width:100px;height: 66px;line-height: 66px}
 	.index_arc li .pic img{}
 	.index_arc li .date_hits{margin-top: 5px;}
@@ -360,7 +358,8 @@ ul.infos p {
 	.index_arc{margin-bottom: 15px;}
 	.index_arc li{line-height: 28px;}
 	.index_arc li.pageNav-wrap a{max-width: 100%;}
-	
+	.nav_page ul.pagination{
+	}
 	.index_recd li a {max-width: 60%;}
 
     /*璇勮澶村儚*/
