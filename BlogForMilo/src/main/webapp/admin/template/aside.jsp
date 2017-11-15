@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
  <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li><a href="javascript:void(0)" onclick="clickShow('${pageContext.request.contextPath}/admin/main.jsp')">报告</a></li>
+        <li><a href="javascript:void(0)">报告</a></li>
       </ul>
       <ul class="nav nav-sidebar">
-        <li class="blog"><a href="${pageContext.request.contextPath}/admin/blog/listPage.html">文章</a></li>
+        <li><a href="${pageContext.request.contextPath}/admin/blog/listPage.html">文章</a></li>
         <li><a href="notice.html">公告</a></li>
         <li><a href="comment.html">评论</a></li>
         <li><a data-toggle="tooltip" data-placement="bottom" title="网站暂无留言功能">留言</a></li>
@@ -41,12 +41,13 @@
       </ul>
 </aside>
 <script>
-$(document).ready(function(){
-    $('ul.nav >li').each(function(index, item){
-    var class_name = location.pathname.split('/')[3];
-    if($(this).hasClass(class_name)){
-        $(this).addClass("active").siblings().removeClass("active");
-    }
-});
+$(document).ready(function () {
+    /*通过地址栏url激活菜单状态*/
+    $(".sidebar .nav-sidebar li a").each(function () {
+        if (window.location==$(this)[0].href) {
+            $(this).removeAttr("data-hover");
+            $(this).parent().addClass('active').siblings().removeClass("active");
+        }
+    });
 });
 </script>
