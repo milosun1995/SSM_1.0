@@ -41,7 +41,7 @@
     	$('#ht-dataTables').DataTable({
 			<%@ include file="/admin/include/dt.jsp"%>
 			"ajax":{
-				url: "${pageContext.request.contextPath}/admin/blog/list.do",
+				url: "${pageContext.request.contextPath}/admin/blog/list.html",
 				type: "POST"
 			},
 			 fnDrawCallback: function(settings){
