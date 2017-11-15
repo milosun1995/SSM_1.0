@@ -22,7 +22,7 @@ public class PageUtil {
 		}else{
 			StringBuffer pageCode=new StringBuffer();
 			if(currentPage>1){
-				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>иор╩рЁ</a></li>");			
+				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'><<</a></li>");			
 			}else{
 				pageCode.append("<li class='disabled'><a href='#'><<</a></li>");		
 			}
