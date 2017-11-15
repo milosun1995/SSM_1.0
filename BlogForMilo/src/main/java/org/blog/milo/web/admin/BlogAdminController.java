@@ -96,12 +96,11 @@ public class BlogAdminController {
 	 */
 	@RequestMapping("/list")
 	public String list(DataTableBean dataTableBean ,Blog s_blog,HttpServletResponse response)throws Exception{
-		PageBean pageBean=new PageBean(Integer.valueOf(dataTableBean.getStart()),Integer.valueOf(dataTableBean.getLength()));//Integer.parseInt(page),Integer.parseInt(rows)
 		System.out.println(Integer.valueOf(dataTableBean.getStart())+"-------------------------"+Integer.valueOf(dataTableBean.getLength()));
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("title", StringUtil.formatLike(s_blog.getTitle()));
-		map.put("start", pageBean.getStart());
-		map.put("size", pageBean.getPageSize());
+		map.put("start", dataTableBean.getStart());
+		map.put("size", dataTableBean.getLength());
 		List<Blog> blogList=blogService.list(map);
 		Long total=blogService.getTotal(map);
 		JSONObject result=new JSONObject();

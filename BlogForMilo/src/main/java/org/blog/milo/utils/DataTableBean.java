@@ -2,8 +2,8 @@ package org.blog.milo.utils;
 
 public class DataTableBean {
 	String draw;
-	String start;
-	String length;
+	Integer start;
+	Integer length;
 
 	public String getDraw() {
 		return draw;
@@ -11,16 +11,16 @@ public class DataTableBean {
 	public void setDraw(String draw) {
 		this.draw = draw;
 	}
-	public String getStart() {
+	public Integer getStart() {
 		return start;
 	}
-	public void setStart(String start) {
+	public void setStart(Integer start) {
 		this.start = start;
 	}
-	public String getLength() {
+	public Integer getLength() {
 		return length;
 	}
-	public void setLength(String length) {
+	public void setLength(Integer length) {
 		this.length = length;
 	}
 }
