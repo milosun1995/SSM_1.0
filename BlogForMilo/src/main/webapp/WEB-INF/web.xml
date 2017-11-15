@@ -76,6 +76,12 @@
 		<location>/error/front_404.jsp</location>
 	</error-page>
 	
+	<!-- 500页面 -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/front_500.jsp</location>
+	</error-page>
+	
 	<!-- 设定系统session 有效时间-->
 	<session-config> 
 		<session-timeout>10</session-timeout> 
