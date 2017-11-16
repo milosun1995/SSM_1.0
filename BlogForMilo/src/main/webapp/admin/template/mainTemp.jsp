@@ -225,11 +225,21 @@
 <script type="text/javascript" charset="utf8" src="${pageContext.request.contextPath}/static/admin/js/bootbox.min.js"></script>
 <!--  -->
 <script id="uploadEditor" type="text/plain" style="display:none;"></script>
-<!-- <script type="text/javascript">
-    function changeState(el) {
-        if (el.readOnly) el.checked=el.readOnly=false;
-        else if (!el.checked) el.readOnly=el.indeterminate=true;
-    }
-</script> -->
+<script type="text/javascript">
+$.fn.dataTable.ext.errMode = 'none'; //关闭dataTable所有exception alert提示框
+$(function(){
+	$.ajaxSetup({  
+	    complete:function(XMLHttpRequest,textStatus){  
+	          if(textStatus=="parsererror"){  
+	               alert('提示信息,登陆超时！请重新登陆!'); 
+	               window.location.href='${pageContext.request.contextPath}/login.html';
+	          } else if(textStatus=="error"){  
+	               alert('提示信息,请求超时！请稍后再试!');  
+	          }
+	          console.log(textStatus);
+	    }  
+	});
+}); 
+</script>
 </body>
 </html>

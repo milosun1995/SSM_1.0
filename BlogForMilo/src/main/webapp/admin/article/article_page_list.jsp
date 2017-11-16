@@ -40,7 +40,7 @@
     $(document).ready(function() {
     	$('#ht-dataTables').DataTable({
 			<%@ include file="/admin/include/dt.jsp"%>
-			"ajax":{
+			ajax:{
 				url: "${pageContext.request.contextPath}/admin/blog/list.html",
 				type: "POST"
 			},
@@ -63,11 +63,11 @@
 	        	{ "data": null,
 	            	render: function(data,type,row,meta){
 	            		var str = "<div style='text-align:center;'>"+
-					            		"<button type='button' id='btn-update' class='btn btn-normal btn-xs' onclick='doUpdate(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/updatePage.html"'	 + ")'>" +  
+					            		"<button type='button' id='btn-update' class='btn btn-normal btn-xs' onclick='doUpdate(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/updatePage.do"'	 + ")'>" +  
 											"修改" + 
 										"</button>"+ 
 										"&nbsp;" + 
-										"<button type='button' id='btn-delete' class='btn btn-danger btn-xs' onclick='doDelete(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/delete.html"'	 + ")'>" +  
+										"<button type='button' id='btn-delete' class='btn btn-danger btn-xs' onclick='doDelete(" +  '"' + row.id + '","${pageContext.request.contextPath}/admin/blog/delete.do"'	 + ")'>" +  
 											"删除" + 
 										"</button>"+
 									"</div>";
