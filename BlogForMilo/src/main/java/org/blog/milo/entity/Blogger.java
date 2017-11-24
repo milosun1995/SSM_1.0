@@ -1,12 +1,16 @@
 package org.blog.milo.entity;
 
+import java.io.Serializable;
+
 /**
  * 博主实体
  * @author java1234_小锋
  *
  */
-public class Blogger {
+public class Blogger implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private Integer id; // 编号
 	private String userName; // 用户名
 	private String password; // 密码
