@@ -33,7 +33,7 @@ public class UeditorUploadController {
 		PrintWriter out = response.getWriter();
 
 		try {
-			String root = "F:\\images";
+			String root = "C:\\images";
 			String fileName = file.getOriginalFilename();
 			String fileSuffix = fileName.substring(fileName.indexOf(".") + 1);
 
@@ -54,7 +54,7 @@ public class UeditorUploadController {
 			//jiuniu yun images end
 			
 			json.put("state", "SUCCESS");
-			json.put("title", "");//图片样式<img title="">
+			json.put("title", file.getName());
 			System.out.println(root+"----------"+path);
 			json.put("url", path);// 图片访问路径
 			json.put("original", file.getName());
