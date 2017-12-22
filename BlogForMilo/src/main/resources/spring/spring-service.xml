@@ -44,7 +44,7 @@
 				/login=anon
 				/admin/**=authc
 				/common/**=authc
-	        </value>  
+	        </value> 
 	    </property> 
 	</bean>  
 	
