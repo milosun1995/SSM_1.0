@@ -82,7 +82,7 @@
         </tx:attributes>  
     </tx:advice>  
   
-    <!-- 配置事务切面 -->  
+    <!-- 配置事务切面 -->
     <aop:config>
         <aop:pointcut id="serviceOperation"  
             expression="execution(* org.blog.milo.service.*.*(..))" />  
