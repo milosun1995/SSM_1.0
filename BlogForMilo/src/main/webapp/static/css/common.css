@@ -351,6 +351,11 @@ ul.infos p {
 	.index_arc li .title a{max-width: 95%;margin-right: 10px;overflow: hidden;text-overflow:clip;white-space: normal;font-size: 8px;line-height: 20px;height: 40px;}
 	.index_arc li .pic{left:10px;top:10px;width:100px;height: 66px;line-height: 66px}
 	.index_arc li .pic img{}
+	
+	/** add Milo Sun 2018-05-24 START*/
+    .infos h1 {font-size:18px;}
+	/** add Milo Sun 2018-05-24 END*/
+	
 	.index_arc li .date_hits{margin-top: 5px;}
 	.index_arc li .date_hits>span {display: none;}
 	/*.index_arc li .hits{display: none;}*/
